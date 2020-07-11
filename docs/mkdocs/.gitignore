@@ -1,4 +1,3 @@
-!docs/assets/**
-!*.md
+!overrides/*.html
 !mkdocs.yml
 !requirements.txt

@@ -68,11 +68,3 @@ plugins:
       minify_html: true
   - git-revision-date-localized
   - awesome-pages
-
-nav:
-  - Home: index.md
-  - Getting Started:
-    - Generate the Documentation: generate_documentation.md
-  - Developer:
-    - MkDocs: mkdocs_start.md
-    - Test: test.md
