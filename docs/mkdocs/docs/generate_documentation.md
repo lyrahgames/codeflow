@@ -16,13 +16,13 @@ Most of the time, coding will be done in this folder.
 
     git clone https://github.com/lyrahgames/codeflow.git codeflow
 
-**Note on Automatic Generation:**
-Of course, it would be possible to automatically generate the documentation with a CI environment.
-But we do not recommend it.
-For this, we would need another server which additionally would have to be configured.
-This may introduce unnecessary version controlling for the generated site and as a result unnecessary memory usage of the repository.
-For a simple documentation site, this may be too much overhead.
-If one would not want to use GitHub Pages, we could use ReadTheDocs to automatically generate every commit to the master branch.
+!!! note "Automatic Documentation Generation"
+    Of course, it would be possible to automatically generate the documentation with a CI environment.
+    But we do not recommend it.
+    For this, we would need another server which additionally would have to be configured.
+    This may introduce unnecessary version controlling for the generated site and as a result unnecessary memory usage of the repository.
+    For a simple documentation site, this may be too much overhead.
+    If one would not want to use GitHub Pages, we could use ReadTheDocs to automatically generate every commit to the master branch.
 
 We need another clone to be able to manually generate the site.
 

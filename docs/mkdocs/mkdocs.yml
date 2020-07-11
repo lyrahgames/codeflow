@@ -1,3 +1,62 @@
 site_name: Codeflow
+
 theme:
   name: material
+  features:
+    - tabs
+  palette:
+    # scheme: default
+    scheme: preference
+    primary: white
+    accent: indigo
+    font:
+      text: Roboto
+      code: Roboto Mono
+    icon:
+      logo: material/library
+      repo: fontawesome/brands/git-alt
+
+repo_name: lyrahgames/codeflow
+repo_url: https://github.com/lyrahgames/codeflow
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/lyrahgames
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - toc:
+      permalink: true
+  - meta
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.tilde
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized
+  - awesome-pages
