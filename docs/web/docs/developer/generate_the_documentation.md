@@ -36,7 +36,7 @@ Make sure to set the correct branch on the output directory.
 ## Work on the Documentation
 Now change to the actual documentation directory.
 
-    cd ../codeflow/docs/mkdocs
+    cd ../codeflow/docs/web
 
 Change something and do work.
 Use the `mkdocs serve` command to inspect changes.
