@@ -11,7 +11,7 @@ This is a general advice for other projects as well.
     mkdir codeflow
     cd codeflow
 
-Now clone the repository to be able to work with the actual on the master branch.
+Now clone the repository to be able to work with the actual code on the master branch.
 Most of the time, coding will be done in this folder.
 
     git clone https://github.com/lyrahgames/codeflow.git codeflow

@@ -1,3 +1,4 @@
+!docs/assets/**
 !*.md
 !mkdocs.yml
 !requirements.txt

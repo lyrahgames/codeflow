@@ -1,7 +1,18 @@
 site_name: Codeflow
+site_url: https://lyrahgames.github.io/codeflow
+site_author: Markus Pawellek
+site_description: >-
+  Tutorials, Explanations, Exercises, Solutions, Workflows referring to Coding and Sciences
+
+repo_name: lyrahgames/codeflow
+repo_url: https://github.com/lyrahgames/codeflow
+
+copyright: Copyright &copy; 2020 Markus Pawellek
 
 theme:
   name: material
+  custom_dir: overrides
+  language: en
   features:
     - tabs
   palette:
@@ -16,12 +27,9 @@ theme:
       logo: material/library
       repo: fontawesome/brands/git-alt
 
-repo_name: lyrahgames/codeflow
-repo_url: https://github.com/lyrahgames/codeflow
-
 extra:
   social:
-    - icon: fontawesome/brands/github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/lyrahgames
 
 markdown_extensions:
@@ -60,3 +68,11 @@ plugins:
       minify_html: true
   - git-revision-date-localized
   - awesome-pages
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Generate the Documentation: generate_documentation.md
+  - Developer:
+    - MkDocs: mkdocs_start.md
+    - Test: test.md
