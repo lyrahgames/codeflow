@@ -51,6 +51,10 @@ Nearly every developer would first try to find such a `README` file to learn som
 
 ## Advanced Techniques
 
+!!! abstract "Recommendation"
+    If your documentation does not fit into a `README.md` file anymore then use MkDocs and GitHub Pages as a hosting platform.
+    If the manual building of the documentation becomes too cumbersome, try to use ReadTheDocs.
+
 There will be a point in time when writing information into a `README` file will not suffice as documentation.
 Therefore, tools were developed to make things easier for developers and technical writers.
 If you need more than one file to structure your documentation, you will generally use a folder `docs` inside your repository where you will put all of your documentation files.
@@ -91,8 +95,10 @@ Unfortunately, both of them have to be compatible with each other.
     Nearly every static documentation builder should be compatible with it.
     But it is mainly used for Jekyll webpages.
 
-All of these tools will give you a good-looking and manageable documentation system.
-But I would like to recommend two specific workflows and to show some examples of how to implement these.
+As an example, take a look at the build process of [this](../developer/generate_the_documentation.md) documenation.
+
+<!-- All of these tools will give you a good-looking and manageable documentation system.
+But I would like to recommend two specific workflows and to show some examples of how to implement these. -->
 
 <!-- Sphinx Documentation hosted by ReadTheDocs
 :   This is by far the simplest method to start with more advanced documentation.
