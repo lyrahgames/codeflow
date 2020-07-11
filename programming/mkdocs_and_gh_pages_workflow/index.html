@@ -1,0 +1,335 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Tutorials, Explanations, Exercises, Solutions, Workflows referring to Coding and Sciences"><link href=https://lyrahgames.github.io/codeflow/programming/mkdocs_and_gh_pages_workflow/ rel=canonical><meta name=author content="Markus Pawellek"><link rel="shortcut icon" href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.1.2, mkdocs-material-5.4.0"><title>MkDocs and GitHub Pages Workflow - Codeflow</title><link rel=stylesheet href=../../assets/stylesheets/main.fe0cca5b.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.a46bcfb3.min.css><meta name=theme-color content><link href=https://fonts.gstatic.com rel=preconnect crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary=white data-md-color-accent=indigo> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#mkdocs-and-github-pages-workflow class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header-nav md-grid" aria-label=Header> <a href=https://lyrahgames.github.io/codeflow title=Codeflow class="md-header-nav__button md-logo" aria-label=Codeflow> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg> </a> <label class="md-header-nav__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header-nav__title data-md-component=header-title> <div class=md-header-nav__ellipsis> <span class="md-header-nav__topic md-ellipsis"> Codeflow </span> <span class="md-header-nav__topic md-ellipsis"> MkDocs and GitHub Pages Workflow </span> </div> </div> <label class="md-header-nav__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear data-md-component=search-reset tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header-nav__source> <a href=https://github.com/lyrahgames/codeflow/ title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> lyrahgames/codeflow </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class="md-tabs md-tabs--active" aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../advanced_project/ class="md-tabs__link md-tabs__link--active"> Programming </a> </li> <li class=md-tabs__item> <a href=../../server/nextcloud_with_nginx_reverse_proxy/ class=md-tabs__link> Server </a> </li> <li class=md-tabs__item> <a href=../../developer/generate_the_documentation/ class=md-tabs__link> For Codeflow Developers </a> </li> <li class=md-tabs__item> <a href=../../about/authors/ class=md-tabs__link> About </a> </li> <li class=md-tabs__item> <a href=../../mathematics/exercises/cardinal_number_of_finite_power_set/ class=md-tabs__link> Mathematics </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=https://lyrahgames.github.io/codeflow title=Codeflow class="md-nav__button md-logo" aria-label=Codeflow> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg> </a> Codeflow </label> <div class=md-nav__source> <a href=https://github.com/lyrahgames/codeflow/ title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg> </div> <div class=md-source__repository> lyrahgames/codeflow </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. title=Home class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2 type=checkbox id=nav-2 checked> <label class=md-nav__link for=nav-2> Programming <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Programming data-md-level=1> <label class=md-nav__title for=nav-2> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Programming </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../advanced_project/ title="Advanced Project" class=md-nav__link> Advanced Project </a> </li> <li class=md-nav__item> <a href=../basic_toolchain/ title="Basic Toolchain" class=md-nav__link> Basic Toolchain </a> </li> <li class=md-nav__item> <a href=../common_toolchain/ title="Common Toolchain" class=md-nav__link> Common Toolchain </a> </li> <li class=md-nav__item> <a href=../community_files/ title="Community Files" class=md-nav__link> Community Files </a> </li> <li class=md-nav__item> <a href=../documentation/ title="Creating a Documentation for your Project" class=md-nav__link> Creating a Documentation for your Project </a> </li> <li class=md-nav__item> <a href=../git_basics/ title="Git Basics" class=md-nav__link> Git Basics </a> </li> <li class=md-nav__item> <a href=../licensing/ title="Licensing a Repository" class=md-nav__link> Licensing a Repository </a> </li> <li class=md-nav__item> <a href=../linux_development_environment/ title="Development Environment" class=md-nav__link> Development Environment </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> MkDocs and GitHub Pages Workflow <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg> </span> </label> <a href=./ title="MkDocs and GitHub Pages Workflow" class="md-nav__link md-nav__link--active"> MkDocs and GitHub Pages Workflow </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#requirements class=md-nav__link> Requirements </a> </li> <li class=md-nav__item> <a href=#preliminaries class=md-nav__link> Preliminaries </a> </li> <li class=md-nav__item> <a href=#initialization class=md-nav__link> Initialization </a> </li> <li class=md-nav__item> <a href=#configuration class=md-nav__link> Configuration </a> <nav class=md-nav aria-label=Configuration> <ul class=md-nav__list> <li class=md-nav__item> <a href=#basics class=md-nav__link> Basics </a> </li> <li class=md-nav__item> <a href=#theme class=md-nav__link> Theme </a> </li> <li class=md-nav__item> <a href=#customization-of-material-theme-justify-text class=md-nav__link> Customization of Material Theme: Justify Text </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#build-and-deploy class=md-nav__link> Build and Deploy </a> <nav class=md-nav aria-label="Build and Deploy"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#initialization_1 class=md-nav__link> Initialization </a> </li> <li class=md-nav__item> <a href=#updating class=md-nav__link> Updating </a> </li> <li class=md-nav__item> <a href=#making-it-easier-through-scripts class=md-nav__link> Making it Easier through Scripts </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#references class=md-nav__link> References </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../windows_development_environment/ title="Development on Windows" class=md-nav__link> Development on Windows </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2-11 type=checkbox id=nav-2-11> <label class=md-nav__link for=nav-2-11> C++ <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=C++ data-md-level=2> <label class=md-nav__title for=nav-2-11> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> C++ </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c%2B%2B/clang_format_force_newlines/ title="Forcing Newlines while using clang-format" class=md-nav__link> Forcing Newlines while using clang-format </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/cmake_taming_the_beast/ title="CMake: Taming the Beast" class=md-nav__link> CMake: Taming the Beast </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/hello_world/ title="Hello, World!" class=md-nav__link> Hello, World! </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/project_start/ title="Starting a simple project in C++" class=md-nav__link> Starting a simple project in C++ </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/project_structure/ title="C++ Project Structures" class=md-nav__link> C++ Project Structures </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-2-11-6 type=checkbox id=nav-2-11-6> <label class=md-nav__link for=nav-2-11-6> Course Lectures <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="Course Lectures" data-md-level=3> <label class=md-nav__title for=nav-2-11-6> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Course Lectures </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../c%2B%2B/course/00/ title="0. Preliminaries" class=md-nav__link> 0. Preliminaries </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/01/ title="1. Hello, World!" class=md-nav__link> 1. Hello, World! </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/02/ title="2. Building Blocks" class=md-nav__link> 2. Building Blocks </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/03/ title="3. Editor Configuration" class=md-nav__link> 3. Editor Configuration </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/04/ title="4. Multiple Files" class=md-nav__link> 4. Multiple Files </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/05/ title="5. The Compilation Process" class=md-nav__link> 5. The Compilation Process </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/06/ title="6. Greatest Common Divisor" class=md-nav__link> 6. Greatest Common Divisor </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/07/ title="7. Rational Structure" class=md-nav__link> 7. Rational Structure </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/08/ title="8. Starting with Graphics" class=md-nav__link> 8. Starting with Graphics </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/09/ title="9. Build System Basics" class=md-nav__link> 9. Build System Basics </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/10/ title="10. Version Control" class=md-nav__link> 10. Version Control </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/11/ title="11. GitHub as Git Hosting Platform" class=md-nav__link> 11. GitHub as Git Hosting Platform </a> </li> <li class=md-nav__item> <a href=../c%2B%2B/course/12/ title="12. Monte-Carlo π" class=md-nav__link> 12. Monte-Carlo π </a> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-3 type=checkbox id=nav-3> <label class=md-nav__link for=nav-3> Server <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Server data-md-level=1> <label class=md-nav__title for=nav-3> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Server </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../server/nextcloud_with_nginx_reverse_proxy/ title="Set Up Nextcloud with NGINX Reverse Proxy" class=md-nav__link> Set Up Nextcloud with NGINX Reverse Proxy </a> </li> <li class=md-nav__item> <a href=../../server/self_hosting/ title="Set up a Self-Hosted Server" class=md-nav__link> Set up a Self-Hosted Server </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-4 type=checkbox id=nav-4> <label class=md-nav__link for=nav-4> For Codeflow Developers <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label="For Codeflow Developers" data-md-level=1> <label class=md-nav__title for=nav-4> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> For Codeflow Developers </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../developer/generate_the_documentation/ title="Generate the Documentation" class=md-nav__link> Generate the Documentation </a> </li> <li class=md-nav__item> <a href=../../developer/mkdocs_start/ title="Welcome to MkDocs" class=md-nav__link> Welcome to MkDocs </a> </li> <li class=md-nav__item> <a href=../../developer/test/ title=Test class=md-nav__link> Test </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-5 type=checkbox id=nav-5> <label class=md-nav__link for=nav-5> About <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=About data-md-level=1> <label class=md-nav__title for=nav-5> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> About </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../about/authors/ title=Authors class=md-nav__link> Authors </a> </li> <li class=md-nav__item> <a href=../../about/license/ title=License class=md-nav__link> License </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-6 type=checkbox id=nav-6> <label class=md-nav__link for=nav-6> Mathematics <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Mathematics data-md-level=1> <label class=md-nav__title for=nav-6> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Mathematics </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=nav-6-1 type=checkbox id=nav-6-1> <label class=md-nav__link for=nav-6-1> Exercises <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg> </span> </label> <nav class=md-nav aria-label=Exercises data-md-level=2> <label class=md-nav__title for=nav-6-1> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Exercises </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../mathematics/exercises/cardinal_number_of_finite_power_set/ title="Cardinal Number of Finite Power Sets" class=md-nav__link> Cardinal Number of Finite Power Sets </a> </li> <li class=md-nav__item> <a href=../../mathematics/exercises/characterization_bijectivity/ title="Characterization of Bijectivity" class=md-nav__link> Characterization of Bijectivity </a> </li> <li class=md-nav__item> <a href=../../mathematics/exercises/convergence_implies_fixed_point/ title="Convergence Implies the Existence of a Fixed Point" class=md-nav__link> Convergence Implies the Existence of a Fixed Point </a> </li> <li class=md-nav__item> <a href=../../mathematics/exercises/divisibility_by_133/ title="Divisibility by 133" class=md-nav__link> Divisibility by 133 </a> </li> <li class=md-nav__item> <a href=../../mathematics/exercises/orthogonal_invariance_of_laplacian/ title="Invariance of the Laplacian" class=md-nav__link> Invariance of the Laplacian </a> </li> </ul> </nav> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </span> Table of contents </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=#requirements class=md-nav__link> Requirements </a> </li> <li class=md-nav__item> <a href=#preliminaries class=md-nav__link> Preliminaries </a> </li> <li class=md-nav__item> <a href=#initialization class=md-nav__link> Initialization </a> </li> <li class=md-nav__item> <a href=#configuration class=md-nav__link> Configuration </a> <nav class=md-nav aria-label=Configuration> <ul class=md-nav__list> <li class=md-nav__item> <a href=#basics class=md-nav__link> Basics </a> </li> <li class=md-nav__item> <a href=#theme class=md-nav__link> Theme </a> </li> <li class=md-nav__item> <a href=#customization-of-material-theme-justify-text class=md-nav__link> Customization of Material Theme: Justify Text </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#build-and-deploy class=md-nav__link> Build and Deploy </a> <nav class=md-nav aria-label="Build and Deploy"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#initialization_1 class=md-nav__link> Initialization </a> </li> <li class=md-nav__item> <a href=#updating class=md-nav__link> Updating </a> </li> <li class=md-nav__item> <a href=#making-it-easier-through-scripts class=md-nav__link> Making it Easier through Scripts </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=#references class=md-nav__link> References </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content> <article class="md-content__inner md-typeset"> <style type=text/css>
+    /* Justify all text paragraphs. */
+    p {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    /* Left align all mathematical equations. */
+    mjx-container {
+      text-align: left!important;
+      text-indent: 10%!important;
+    }
+  </style> <a href=https://github.com/lyrahgames/codeflow/edit/master/docs/programming/mkdocs_and_gh_pages_workflow.md title="Edit this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg> </a> <h1 id=mkdocs-and-github-pages-workflow>MkDocs and GitHub Pages Workflow<a class=headerlink href=#mkdocs-and-github-pages-workflow title="Permanent link">&para;</a></h1> <p>This article will not explain the syntax and semantics of MkDocs or how to actually write a documentation. Instead, it aims at providing a workflow on how to start and integrate MkDocs in an ongoing project. Hence, this explanation should be useful if you want to learn how to start with a documentation and/or if your <code>README.md</code> of your project is not sufficient.</p> <p>Without loss of generality, we assume the name of the project to be <code>codeflow</code> and the name of the user to be <code>lyrahgames</code>. Please interchange both of them with your own preference.</p> <h2 id=requirements>Requirements<a class=headerlink href=#requirements title="Permanent link">&para;</a></h2> <ul> <li>Python</li> <li>pip</li> <li>MkDocs</li> </ul> <h2 id=preliminaries>Preliminaries<a class=headerlink href=#preliminaries title="Permanent link">&para;</a></h2> <p>Typically, the project files of your project <code>codeflow</code> will reside in their own directory, also known as the <em>project directory</em>, with the same name. In the most cases, the project directory is version-controlled by Git and as a result, we may as well call the respective directory the <em>project repository</em>. As an example, assume your project would be a C++ application. The content of the project could then be something like the following.</p> <div class=codehilite><pre><span></span><code>codeflow
+├── .git/...
+├── .gitignore
+│
+├── build/
+│   ├── bootstrap.build
+│   └── root.build
+├── buildfile
+├── manifest
+│
+├── codeflow/
+│   ├── application.cpp
+│   ├── application.hpp
+│   ├── buildfile
+│   └── main.cpp
+│
+├── LICENSE
+└── README.md
+</code></pre></div> <p>Here, we have some files and folders concerning Git, the chosen build system, the source code itself, license files, and the up-to-this-point-sufficient documentation in the file <code>README.md</code>.</p> <p>In a C++ project, we tend to use more than one configuration to build and test the source code of the project. As an example, we would like to build the project with the GCC and the Clang compiler. Due to their strong platform-dependence, these configurations should not be stored inside the project repository. Hence, they are not version-controlled by Git. To keep the overview over all those configurations, we use another parent directory again with the same name as the project. We call this parent directory the <em>developer folder</em>. In the following, the tree of the content for this example is shown.</p> <div class=codehilite><pre><span></span><code>codeflow/                        # Developer Folder
+│
+├── codeflow/                    # Project Folder
+│   ├── .git/...
+│   ├── .gitignore
+│   │
+│   ├── build/
+│   │   ├── bootstrap.build
+│   │   └── root.build
+│   ├── buildfile
+│   ├── manifest
+│   │
+│   ├── codeflow/
+│   │   ├── buildfile
+│   │   ├── application.hpp
+│   │   ├── application.cpp
+│   │   └── main.cpp
+│   │
+│   ├── LICENSE
+│   └── README.md
+│
+├── codeflow-gcc/...             # Configuration Folder &#39;gcc&#39;
+│
+└── codeflow-clang/...           # Configuration Folder &#39;clang&#39;
+</code></pre></div> <h2 id=initialization>Initialization<a class=headerlink href=#initialization title="Permanent link">&para;</a></h2> <p>In the next step, we will initialize the documentation with its configuration. We assume that you are currently residing inside the developer folder of your project.</p> <div class=codehilite><pre><span></span><code>$ pwd
+/home/lyrahgames/projects/codeflow
+</code></pre></div> <p>Go into the project folder and create a directory for the documentation. Afterwards, initialize a new web documentation with MkDocs.</p> <div class=codehilite><pre><span></span><code>cd codeflow
+mkdir docs
+cd docs
+mkdocs new web
+</code></pre></div> <div class="admonition note"> <p class=admonition-title>Note</p> <p>Sometimes the documentation for a project does not only exist as website readable by browsers but also as LaTeX documents or other presentations. In this case, we want to be able to keep such files inside the docs directory without changing the web documentation. Therefore we use another subdirectory called <code>web</code>. If you do want to keep things very simple then run <code>mkdocs new docs</code> inside your project folder. But please be aware that this will pollute your project folder with configuration files concerning MkDocs and its themes.</p> </div> <p>We now have to make sure that Git is not ignoring those new files created by MkDocs. If you have chosen the white-listing approach for your <code>.gitignore</code> files, we can add something like the following to a new <code>.gitignore</code> file inside the web documentation folder.</p> <div class=highlight><pre><span></span><code># File: docs/web/.gitignore
+
+!*.md
+!mkdocs.yml
+!requirements.txt
+</code></pre></div> <p>Because MkDocs is based on Python, we additionally have created the file <code>requirements.txt</code> for the pip Package Manager to provide all requirements the documentation needs to be built. At this moment, it should only contain <code>mkdocs</code>.</p> <div class=highlight><pre><span></span><code># File: docs/web/requirements.txt
+
+mkdocs
+</code></pre></div> <p>The project folder structure should now look like the following.</p> <div class=codehilite><pre><span></span><code>codeflow                            # Project Folder
+├── .git/...
+├── .gitignore
+│
+├── build/
+│   ├── bootstrap.build
+│   └── root.build
+├── buildfile
+├── manifest
+│
+├── docs/                           # Documentation Folder
+│   └── web/                        # Web Documentation Folder
+│       ├── .gitignore
+│       ├── docs/
+│       │   └── index.md
+│       ├── mkdocs.yml
+│       └── requirements.txt
+│  
+├── codeflow/
+│   ├── application.cpp
+│   ├── application.hpp
+│   ├── buildfile
+│   └── main.cpp
+│
+├── LICENSE
+└── README.md
+</code></pre></div> <p>Now, to get an impression of the website, MkDocs provides the <code>serve</code> command. It will generate the documentation, update it every time a file in the directory has changed, and provide browser access to the generated site at address <code>127.0.0.1:8000</code>. So go into the web documentation folder, run the following command, and look at the result in your browser.</p> <div class=codehilite><pre><span></span><code>mkdocs serve
+</code></pre></div> <p>This finalizes the initialization process and as a good practice, a commit should be made.</p> <h2 id=configuration>Configuration<a class=headerlink href=#configuration title="Permanent link">&para;</a></h2> <p>At this point, you are able to start documenting your project by adding new files in the Markdown format inside the <code>docs</code> folder of your web documentation folder. MkDocs will automatically detect those files and show them in the table of contents inside your browser. But on the other hand, it may be a good idea to take some more time to configure the MkDocs build process to slightly tweak the generated documentation.</p> <h3 id=basics>Basics<a class=headerlink href=#basics title="Permanent link">&para;</a></h3> <p>The complete configuration of MkDocs can be done by adjusting the file <code>mkdocs.yml</code> inside the web documentation folder. At first you should add the basic information about your project and its documentation.</p> <div class=highlight><pre><span></span><code><span class=c1># File: docs/web/mkdocs.yml</span>
+
+<span class=nt>site_name</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">Codeflow</span>
+<span class=nt>site_url</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">https://lyrahgames.github.io/codeflow</span>
+<span class=nt>site_author</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">Markus Pawellek</span>
+<span class=nt>site_description</span><span class=p>:</span> <span class="p p-Indicator">&gt;-</span>
+  <span class=no>Tutorials, Explanations, Exercises, Solutions, </span>
+  <span class=no>Workflows referring to Coding and Sciences</span>
+
+<span class=nt>repo_name</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">lyrahgames/codeflow</span>
+<span class=nt>repo_url</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/lyrahgames/codeflow</span>
+
+<span class=nt>copyright</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">Copyright &amp;copy; 2020 Markus Pawellek</span>
+</code></pre></div> <h3 id=theme>Theme<a class=headerlink href=#theme title="Permanent link">&para;</a></h3> <p>Afterwards, in my opinion one of the main decisions has to be made. We have to choose a theme. I recommend to choose the <a href=https://squidfunk.github.io/mkdocs-material/ >Material for MkDocs theme</a>. This theme comes with an extremely good documentation about its usage and configuration. Furthermore, it gives you some hints about what extensions and plugins to additionally add to your MkDocs configuration to make the documentation process easier and faster. Here, we do not go through details but provide an example configuration for the Material theme.</p> <div class=highlight><pre><span></span><code><span class=c1># File: docs/web/mkdocs.yml</span>
+<span class=c1># ...</span>
+
+<span class=nt>theme</span><span class=p>:</span>
+  <span class=nt>name</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">material</span>
+  <span class=nt>custom_dir</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">overrides</span>
+  <span class=nt>language</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">en</span>
+  <span class=nt>features</span><span class=p>:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tabs</span>
+  <span class=nt>palette</span><span class=p>:</span>
+    <span class=nt>scheme</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">default</span>
+    <span class=nt>primary</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">white</span>
+    <span class=nt>accent</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">indigo</span>
+    <span class=nt>font</span><span class=p>:</span>
+      <span class=nt>text</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">Roboto</span>
+      <span class=nt>code</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">Roboto Mono</span>
+    <span class=nt>icon</span><span class=p>:</span>
+      <span class=nt>logo</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">material/library</span>
+      <span class=nt>repo</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/git-alt</span>
+
+<span class=nt>extra</span><span class=p>:</span>
+  <span class=nt>social</span><span class=p>:</span>
+    <span class="p p-Indicator">-</span> <span class=nt>icon</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">fontawesome/brands/github</span>
+      <span class=nt>link</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">https://github.com/lyrahgames</span>
+
+<span class=nt>markdown_extensions</span><span class=p>:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admonition</span>
+  <span class="p p-Indicator">-</span> <span class=nt>codehilite</span><span class=p>:</span>
+      <span class=nt>guess_lang</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class=nt>linenums</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+  <span class="p p-Indicator">-</span> <span class=nt>toc</span><span class=p>:</span>
+      <span class=nt>permalink</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">meta</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.arithmatex</span>
+  <span class="p p-Indicator">-</span> <span class=nt>pymdownx.betterem</span><span class=p>:</span>
+      <span class=nt>smart_enable</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">all</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.caret</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.critic</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.details</span>
+  <span class="p p-Indicator">-</span> <span class=nt>pymdownx.emoji</span><span class=p>:</span>
+      <span class=nt>emoji_index</span><span class=p>:</span> <span class=kt>!!python/name:materialx.emoji.twemoji</span>
+      <span class=nt>emoji_generator</span><span class=p>:</span> <span class=kt>!!python/name:materialx.emoji.to_svg</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.inlinehilite</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.magiclink</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.mark</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.smartsymbols</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.superfences</span>
+  <span class="p p-Indicator">-</span> <span class=nt>pymdownx.tasklist</span><span class=p>:</span>
+      <span class=nt>custom_checkbox</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.tabbed</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pymdownx.tilde</span>
+
+<span class=nt>extra_javascript</span><span class=p>:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML</span>
+
+<span class=nt>plugins</span><span class=p>:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">search</span>
+  <span class="p p-Indicator">-</span> <span class=nt>minify</span><span class=p>:</span>
+      <span class=nt>minify_html</span><span class=p>:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">git-revision-date-localized</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">awesome-pages</span>
+</code></pre></div> <p>We make sure not to use something not provided by the system and add some new entries to the <code>requirements.txt</code> file.</p> <div class=highlight><pre><span></span><code># File: docs/web/requirements.txt
+
+mkdocs
+mkdocs-material
+mkdocs-minify-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-awesome-pages-plugin
+</code></pre></div> <p>Before looking at the generated output, make sure to use pip with this <code>requirements.txt</code> to install the missing dependencies for ourselves by running the following command.</p> <div class=codehilite><pre><span></span><code>pip install -r requirements.txt
+</code></pre></div> <h3 id=customization-of-material-theme-justify-text>Customization of Material Theme: Justify Text<a class=headerlink href=#customization-of-material-theme-justify-text title="Permanent link">&para;</a></h3> <p>Nearly every theme for MkDocs will give possibilities to customize its design, formatting rules, and other stuff. As an example for the Material theme, we will show how to set the alignment of content text blocks to the justify mode. For this, we use the override mechanism provided by the Material theme.</p> <p>First, create a new directory <code>overrides</code> in the web documentation folder.</p> <div class=codehilite><pre><span></span><code>cd docs/web
+mkdir overrides
+cd overrides
+</code></pre></div> <p>Now, open the new file <code>main.html</code> inside the folder <code>overrides</code> and add the following content.</p> <div class=highlight><pre><span></span><code>{% extends &quot;base.html&quot; %}
+
+{% block content %}
+  <span class=p>&lt;</span><span class=nt>style</span> <span class=na>type</span><span class=o>=</span><span class=s>&quot;text/css&quot;</span><span class=p>&gt;</span>
+    <span class=nt>p</span> <span class=p>{</span>
+      <span class=k>text-align</span><span class=p>:</span> <span class=kc>justify</span><span class=p>;</span>
+      <span class=k>text-justify</span><span class=p>:</span> <span class=kc>inter-word</span><span class=p>;</span>
+    <span class=p>}</span>
+  <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
+  {{ super() }}
+{% endblock %}
+</code></pre></div> <p>Your current project folder structure should look like the following.</p> <div class=codehilite><pre><span></span><code>codeflow                            # Project Folder
+├── .git/...
+├── .gitignore
+│
+├── build/
+│   ├── bootstrap.build
+│   └── root.build
+├── buildfile
+├── manifest
+│
+├── docs/                           # Documentation Folder
+│   └── web/                        # Web Documentation Folder
+│       ├── .gitignore
+│       ├── docs/                   # Folder for the Actual Documentation Files
+│       │   └── index.md
+│       ├── overrides/              # Material Theme Customization Folder
+│       │   └── main.html           # Customization for all Documentation Files
+│       ├── mkdocs.yml
+│       └── requirements.txt
+│  
+├── codeflow/
+│   ├── application.cpp
+│   ├── application.hpp
+│   ├── buildfile
+│   └── main.cpp
+│
+├── LICENSE
+└── README.md
+</code></pre></div> <h2 id=build-and-deploy>Build and Deploy<a class=headerlink href=#build-and-deploy title="Permanent link">&para;</a></h2> <p>After complete configuration and the writing of new documentation files, the generated site should be observed in the browser to test if all settings work as expected. This can be done again by using the command <code>mkdocs serve</code>. If everything seems to be alright, we have to build the documentation to actually get the files of the website. We want to push those files to a documentation hosting platform, in our case GitHub Pages, to make the documentation available to other people.</p> <h3 id=initialization_1>Initialization<a class=headerlink href=#initialization_1 title="Permanent link">&para;</a></h3> <p>First, we set up a new configuration folder inside the developer folder where all files of the generated documentation will be put. Because we want to use GitHub Pages as a hosting platform, we have to make sure to use a Git repository which is pushing to the branch <code>gh-pages</code>.</p> <p>Make sure that you are in the developer folder.</p> <div class=codehilite><pre><span></span><code>$ pwd
+/home/lyrahgames/projects/codeflow
+</code></pre></div> <p>Initialize a new Git repository, set it to the according branch, and provide the GitHub repository address as a remote by using the following commands.</p> <div class=codehilite><pre><span></span><code>git init codeflow-gh-pages
+cd codeflow-gh-pages
+git checkout -b gh-pages
+git remote add origin git@github.com:lyrahgames/codeflow.git
+</code></pre></div> <p>The structure of your developer folder should now look like this.</p> <div class=codehilite><pre><span></span><code>codeflow/                        # Developer Folder
+│
+├── codeflow/...                 # Project Folder
+│
+├── codeflow-gcc/...             # Configuration Folder &#39;gcc&#39;
+│
+├── codeflow-clang/...           # Configuration Folder &#39;clang&#39;
+│
+└── codeflow-gh-pages/           # Configuration Folder for GitHub Pages
+</code></pre></div> <p>The GitHub Pages environment on GitHub does not have to be turned on manually. GitHub should automatically enable this feature if the <code>gh-pages</code> branch is available in the GitHub repository. If this is not the case, enable the environment manually.</p> <h3 id=updating>Updating<a class=headerlink href=#updating title="Permanent link">&para;</a></h3> <p>Building the documentation has to be done every time you want to push the changes to the hosting platform. To keep your GitHub repository consistent, you should first make a commit in the project folder and push it to the <code>master</code> branch of your GitHub repository.</p> <div class=codehilite><pre><span></span><code>git add .
+git commit
+git push origin master
+</code></pre></div> <p>Afterwards, you are now able to actually build the documentation into the configuration folder for GitHub Pages. Make sure to run the following command inside the web documentation folder.</p> <div class=codehilite><pre><span></span><code>mkdocs build -d ../../../codeflow-gh-pages
+</code></pre></div> <p>Now, we go into the configuration folder for GitHub Pages and commit its changes by amending to the previous commit. This makes sure the site will not be version-controlled by Git. We do not want it to be version-controlled because the generated site is a build artifact.</p> <div class=codehilite><pre><span></span><code>cd ../../../codeflow-gh-pages
+git add .
+git commit --amend -m &quot;Update site&quot;
+</code></pre></div> <p>Because we have amended to the previous commit, we have to do a force push to the <code>gh-pages</code> branch to update the documentation on the hosting platform.</p> <div class=codehilite><pre><span></span><code>git push -f origin gh-pages.
+</code></pre></div> <div class="admonition note"> <p class=admonition-title>Automatic Documentation Generation</p> <p>Of course, it would be possible to automatically generate the documentation with a CI environment. But we do not recommend it. For this, we would need another server which additionally would have to be configured. This may introduce unnecessary version controlling for the generated site and as a result unnecessary memory usage of the repository. For a simple documentation site, this may be too much overhead. If one would not want to use GitHub Pages, we could use ReadTheDocs to automatically generate every commit to the master branch.</p> </div> <h3 id=making-it-easier-through-scripts>Making it Easier through Scripts<a class=headerlink href=#making-it-easier-through-scripts title="Permanent link">&para;</a></h3> <p>If you are frequently writing the documentation of your project on different platforms, it can become cumbersome to run all the commands for the initialization, building, and deploying every time. To make it easier and faster, we can provide simple scripts that allow us to do these processes in one simple step. Here, it is done for a Linux-based operating system. We will create two shell scripts, <code>init.sh</code> for the initialization and <code>build_and_deploy.sh</code> for the building and deployment, inside the web documentation folder. Your current project folder structure should then look like the following.</p> <div class=codehilite><pre><span></span><code>codeflow                            # Project Folder
+├── .git/...
+├── .gitignore
+│
+├── build/
+│   ├── bootstrap.build
+│   └── root.build
+├── buildfile
+├── manifest
+│
+├── docs/                           # Documentation Folder
+│   └── web/                        # Web Documentation Folder
+│       ├── .gitignore
+│       ├── docs/                   # Folder for the Actual Documentation Files
+│       │   └── index.md
+│       ├── overrides/
+│       │   └── main.html
+│       ├── mkdocs.yml
+│       ├── requirements.txt
+│       ├── init.sh                 # Shell Script for Initialization
+│       └── build_and_deploy.sh     # Shell Script for Building and Deployment
+│  
+├── codeflow/
+│   ├── application.cpp
+│   ├── application.hpp
+│   ├── buildfile
+│   └── main.cpp
+│
+├── LICENSE
+└── README.md
+</code></pre></div> <p>Both scripts only contain the commands that were already described in the above sections. Additionally, we have added a mechanism to determine the current folder and changing the current directory to the directory where the script itself lies. This makes sure there will be no problems when the scripts are called from another directory.</p> <div class=highlight><pre><span></span><code><span class=c1># File: docs/web/init.sh</span>
+
+<span class=c1>#!/bin/sh</span>
+
+<span class=c1># Make sure to run the run the commands in the web documentation folder.</span>
+<span class=nv>doc_dir</span><span class=o>=</span><span class=sb>`</span>dirname <span class=s2>&quot;</span><span class=nv>$0</span><span class=s2>&quot;</span><span class=sb>`</span>
+<span class=nb>cd</span> <span class=nv>$doc_dir</span>
+
+<span class=c1># Install all requirements to be able to build the documentation.</span>
+pip install -r requirements.txt
+
+<span class=c1># Create a configuration folder for the gh-pages branch next to the</span>
+<span class=c1># project folder and hopefully inside the developer folder.</span>
+<span class=c1># After building the documentation, we typically do a force push to</span>
+<span class=c1># the remote repository. Hence, it is enough to create a new repository</span>
+<span class=c1># and not to clone the remote repository.</span>
+<span class=c1># We can even run these commands if there is no gh-pages branch available.</span>
+<span class=nb>cd</span> ../../..
+git init codeflow-gh-pages
+<span class=nb>cd</span> codeflow-gh-pages
+git checkout -b gh-pages
+git remote add origin git@github.com:lyrahgames/codeflow.git
+touch index.html
+git add .
+git commit -m <span class=s2>&quot;Initial commit&quot;</span>
+
+<span class=c1># Alternative initialization process using cloning.</span>
+<span class=c1># cd ../../..</span>
+<span class=c1># git clone git@github.com:lyrahgames/codeflow.git --branch gh-pages --single-branch codeflow-gh-pages</span>
+<span class=c1># cd codeflow-gh-pages</span>
+<span class=c1># git checkout gh-pages</span>
+</code></pre></div> <div class=highlight><pre><span></span><code><span class=c1># File: docs/web/build_and_deploy.sh</span>
+
+<span class=c1>#!/bin/sh</span>
+
+<span class=c1># Make sure to run the run the commands in the web documentation folder.</span>
+<span class=nv>doc_dir</span><span class=o>=</span><span class=sb>`</span>dirname <span class=s2>&quot;</span><span class=nv>$0</span><span class=s2>&quot;</span><span class=sb>`</span>
+<span class=nb>cd</span> <span class=nv>$doc_dir</span>
+
+<span class=c1># Build the documentation into the GitHub Pages configuration folder.</span>
+mkdocs build -d ../../../codeflow-gh-pages
+
+<span class=c1># Deploy the documentation by amending the changes to disable version control</span>
+<span class=c1># and by force pushing to the remote repository.</span>
+<span class=nb>cd</span> ../../../codeflow-gh-pages
+git add .
+git commit --amend -m <span class=s2>&quot;Update site&quot;</span>
+git push -f origin gh-pages
+</code></pre></div> <p>Of course, we have to slightly change the <code>.gitignore</code> file to allow the shell scripts to be captured by Git.</p> <div class=highlight><pre><span></span><code># File: docs/web/.gitignore
+
+!overrides/*.html
+!mkdocs.yml
+!requirements.txt
+!*.sh
+</code></pre></div> <p>Afterwards, we set the executable flags to be able to run the scripts from the command line.</p> <div class=codehilite><pre><span></span><code>chmod +x init.sh build_and_deploy.sh
+</code></pre></div> <p>For the future this means, after cloning the repository, one should execute the <code>init.sh</code> script to generate the GitHub Pages configuration folder. After changing the documentation and committing the result, one should call the <code>build_and_deploy.sh</code> script to push the newly created site to documentation hosting platform.</p> <div class="admonition note"> <p class=admonition-title>Note</p> <p>Going one step further, we could even think about using Git hooks to automatically run the <code>build_and_deploy.sh</code> script for every commit on the <code>master</code> branch.</p> </div> <h2 id=references>References<a class=headerlink href=#references title="Permanent link">&para;</a></h2> <ul> <li><a href=https://www.mkdocs.org/ >MkDocs Documentation</a></li> <li><a href=https://squidfunk.github.io/mkdocs-material/ >Material for MkDocs Documentation</a></li> </ul> <hr> <div class=md-source-date> <small> Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 29, 2020</span> </small> </div> </article> </div> </div> </main> <footer class=md-footer> <div class=md-footer-nav> <nav class="md-footer-nav__inner md-grid" aria-label=Footer> <a href=../linux_development_environment/ title="Development Environment" class="md-footer-nav__link md-footer-nav__link--prev" rel=prev> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Previous </span> Development Environment </div> </div> </a> <a href=../windows_development_environment/ title="Development on Windows" class="md-footer-nav__link md-footer-nav__link--next" rel=next> <div class=md-footer-nav__title> <div class=md-ellipsis> <span class=md-footer-nav__direction> Next </span> Development on Windows </div> </div> <div class="md-footer-nav__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> </div> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Copyright &copy; 2020 Markus Pawellek </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> <div class=md-footer-social> <a href=https://github.com/lyrahgames target=_blank rel=noopener title=github.com class=md-footer-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> </a> </div> </div> </div> </footer> </div> <script src=../../assets/javascripts/vendor.d710d30a.min.js></script> <script src=../../assets/javascripts/bundle.b39636ac.min.js></script><script id=__lang type=application/json>{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script> <script>
+        app = initialize({
+          base: "../..",
+          features: ["tabs"],
+          search: Object.assign({
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script> <script src=../../javascripts/config.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> </body> </html>
