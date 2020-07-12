@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <style type="text/css">
+    .justify {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+  </style>
+  <section class="justify">
+    {{ super() }}
+  </section>
+{% endblock %}

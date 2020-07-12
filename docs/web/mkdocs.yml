@@ -16,8 +16,8 @@ theme:
   features:
     - tabs
   palette:
-    # scheme: default
-    scheme: preference
+    scheme: default
+    # scheme: preference
     primary: white
     accent: indigo
     font:

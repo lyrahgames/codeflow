@@ -11,3 +11,5 @@ Additionally, you should set the command-line editor as the commit message edito
 ```bash
     git config --global core.editor "$EDITOR"
 ```
+
+## .gitignore Whitelisting and Blacklisting Workflow
