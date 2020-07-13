@@ -406,6 +406,126 @@ Because we have amended to the previous commit, we have to do a force push to th
     For a simple documentation site, this may be too much overhead.
     If one would not want to use GitHub Pages, we could use ReadTheDocs to automatically generate every commit to the master branch.
 
+
+### Making it Easier through Scripts
+
+If you are frequently writing the documentation of your project on different platforms, it can become cumbersome to run all the commands for the initialization, building, and deploying every time.
+To make it easier and faster, we can provide simple scripts that allow us to do these processes in one simple step.
+Here, it is done for a Linux-based operating system.
+We will create two shell scripts, `init.sh` for the initialization and `build_and_deploy.sh` for the building and deployment, inside the web documentation folder.
+Your current project folder structure should then look like the following.
+
+    codeflow                            # Project Folder
+    ├── .git/...
+    ├── .gitignore
+    │
+    ├── build/
+    │   ├── bootstrap.build
+    │   └── root.build
+    ├── buildfile
+    ├── manifest
+    │
+    ├── docs/                           # Documentation Folder
+    │   └── web/                        # Web Documentation Folder
+    │       ├── .gitignore
+    │       ├── docs/                   # Folder for the Actual Documentation Files
+    │       │   └── index.md
+    │       ├── overrides/
+    │       │   └── main.html
+    │       ├── mkdocs.yml
+    │       ├── requirements.txt
+    │       ├── init.sh                 # Shell Script for Initialization
+    │       └── build_and_deploy.sh     # Shell Script for Building and Deployment
+    │  
+    ├── codeflow/
+    │   ├── application.cpp
+    │   ├── application.hpp
+    │   ├── buildfile
+    │   └── main.cpp
+    │
+    ├── LICENSE
+    └── README.md
+
+
+Both scripts only contain the commands that were already described in the above sections.
+Additionally, we have added a mechanism to determine the current folder and changing the current directory to the directory where the script itself lies.
+This makes sure there will be no problems when the scripts are called from another directory.
+
+```sh
+# File: docs/web/init.sh
+
+#!/bin/sh
+
+# Make sure to run the run the commands in the web documentation folder.
+doc_dir=`dirname "$0"`
+cd $doc_dir
+
+# Install all requirements to be able to build the documentation.
+pip install -r requirements.txt
+
+# Create a configuration folder for the gh-pages branch next to the
+# project folder and hopefully inside the developer folder.
+# After building the documentation, we typically do a force push to
+# the remote repository. Hence, it is enough to create a new repository
+# and not to clone the remote repository.
+# We can even run these commands if there is no gh-pages branch available.
+cd ../../..
+git init codeflow-gh-pages
+cd codeflow-gh-pages
+git checkout -b gh-pages
+git remote add origin git@github.com:lyrahgames/codeflow.git
+touch index.html
+git add .
+git commit -m "Initial commit"
+
+# Alternative initialization process using cloning.
+# cd ../../..
+# git clone git@github.com:lyrahgames/codeflow.git --branch gh-pages --single-branch codeflow-gh-pages
+# cd codeflow-gh-pages
+# git checkout gh-pages
+```
+
+```sh
+# File: docs/web/build_and_deploy.sh
+
+#!/bin/sh
+
+# Make sure to run the run the commands in the web documentation folder.
+doc_dir=`dirname "$0"`
+cd $doc_dir
+
+# Build the documentation into the GitHub Pages configuration folder.
+mkdocs build -d ../../../codeflow-gh-pages
+
+# Deploy the documentation by amending the changes to disable version control
+# and by force pushing to the remote repository.
+cd ../../../codeflow-gh-pages
+git add .
+git commit --amend -m "Update site"
+git push -f origin gh-pages
+```
+
+Of course, we have to slightly change the `.gitignore` file to allow the shell scripts to be captured by Git.
+
+```
+# File: docs/web/.gitignore
+
+!overrides/*.html
+!mkdocs.yml
+!requirements.txt
+!*.sh
+```
+
+Afterwards, we set the executable flags to be able to run the scripts from the command line.
+
+    chmod +x init.sh build_and_deploy.sh
+
+For the future this means, after cloning the repository, one should execute the `init.sh` script to generate the GitHub Pages configuration folder.
+After changing the documentation and committing the result, one should call the `build_and_deploy.sh` script to push the newly created site to documentation hosting platform.
+
+!!! note
+    Going one step further, we could even think about using Git hooks to automatically run the `build_and_deploy.sh` script for every commit on the `master` branch.
+
 ## References
 
 - [MkDocs Documentation](https://www.mkdocs.org/)
