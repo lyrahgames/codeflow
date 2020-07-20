@@ -140,4 +140,13 @@ Because of this the text editor has to be highly optimized like in the case of t
 
 <!-- **Recommendation:** -->
 !!! abstract "Recommendation"
-    Use `GitHub` as your `git`-Server.
+    Use an external hosting platform, such as GitHub or Bitbucket, or set up your own server, like Gitea.
+
+There are no real boundaries when choosing the hosting platform for your code repositories handled by the version control system.
+External hosting platforms, such as GitHub, Bitbucket, or GitLab, provide an easy web interface and are reliable with nearly no configuration needed.
+On the contrary, your code repositories may be private and you do not want them to reside on an external cloud storage.
+An alternative would be to set up your own Git server providing necessary storage and web access.
+A good choice for Git would be to use Gitea, which is a lightweight, fast, and easy-to-set-up self-hosted Git server platform.
+Other alternatives include GitLab, GitWeb, and Gogs.
+If the web access is not needed, one can completely rely on the file system of the host computer without setting up any hosting platform.
+In the case of a self-hosted platform, one should further consider security issues, like HTTPS, and backup procedures, such as RAID.
