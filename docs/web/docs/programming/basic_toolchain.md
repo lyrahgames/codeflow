@@ -90,13 +90,46 @@ But if you really want to have high availability of your shell then you should s
 
 <!-- **Recommendation:** -->
 !!! abstract "Recommendation"
-    Use `git` as your version control system.
+    Use Git as your version control system.
 
 <!-- **Explanation:** -->
-Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.
-Therefore a version control system is versatile alternative to the plain old backup process which makes it indispensable while working on the code for a project.
-`git` is widely used and represent the standard.
+Version control systems (VCS) are software programs that record changes to a file or a set of files over time so that it is possible to recall specific versions later.
+Therefore a VCS is a versatile alternative to the plain old backup process of manually copying folders.
+This makes it indispensable while working on the code for a project.
+Currently, the de-facto standard seems to be Git.
+Alternatives are given by Subversion, also known as SVN, and Mercurial.
+The overall performance of a VCS can be characterized by the following points.
 
+- Centralized vs. Distributed
+- Speed and Efficiency
+- Compression Model and Memory Efficiency
+- Command-Line Interface: Easy/Powerful/Low-Level/Abstraction
+- Branching Model
+- Learning Curve
+- Level of Knowledge Needed
+- Creation of New Repositories
+- Server Setup
+- Access Granularity
+- Security
+- Large-Project Scaling
+- Availability and Interaction with External Tools
+- Merge Strategies
+- Group Capabilities
+- Workflows
+- New Feature Inclusion from External Users
+
+Property | Git | SVN | Mercurial
+---------|-----|----|---
+Centralized vs. Distributed   | Distributed   | Centralized | Distributed
+
+**References:**
+
+- [Git](https://git-scm.com/)
+- [Subversion SVN](https://subversion.apache.org/)
+- [Mercurial](https://www.mercurial-scm.org/)
+- https://svnvsgit.com/
+- https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
+- https://ikriv.com/blog/?p=1905
 
 ## Text Editor
 
