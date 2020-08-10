@@ -1,4 +1,5 @@
 !overrides/*.html
+!*.js
 !mkdocs.yml
 !requirements.txt
 !*.sh
