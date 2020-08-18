@@ -31,6 +31,7 @@
 - https://www.tuxfamily.org/
 
 ## SSH Server
+### VPN vs Direct SSH
 ### Host Configuration and SSH Keys
 ### X11 Forwarding
 - Trusted
@@ -56,6 +57,11 @@
 - Microservice Architecture
 - Legacy Apps to Container
 
+### Docker Compose
+- Fast Setup
+- Frequently Changing and Experimenting
+- Frequently turning on and off different services
+
 ## Mail Server
 
 ## Mailing Lists
@@ -65,3 +71,4 @@
 ## NextCloud
 
 ## Jitsi
+- Privat: Docker-based with frequently turning it on and off
