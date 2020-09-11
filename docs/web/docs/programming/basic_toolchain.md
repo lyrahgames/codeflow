@@ -1,5 +1,10 @@
 # Basic Toolchain
 
+The basic toolchain consists of all tools that are needed on a daily basis.
+Hence, we should strive for a deep understanding all those tools.
+Especially, we should take the time to learn and configure them in a way that they will help us to improve our workflow and efficiency.
+Furthermore, after the understanding of tools, it would even help us to consider the interaction between those different tools.
+
 ## Notes on Integrated Development Environments
 
 Integrated Development Environments (IDEs) are software applications for computer programmers to support the process of writing and debugging code. They merge independent software development tools, such as source code editors, build automation tools, and debuggers, together in one bigger application. But there is no clear boundary if something should be called an IDE or a supporting tool.
@@ -121,6 +126,8 @@ The overall performance of a VCS can be characterized by the following points.
 Property | Git | SVN | Mercurial
 ---------|-----|----|---
 Centralized vs. Distributed   | Distributed   | Centralized | Distributed
+
+- Git can be used as a client for SVN and Mercurial
 
 **References:**
 

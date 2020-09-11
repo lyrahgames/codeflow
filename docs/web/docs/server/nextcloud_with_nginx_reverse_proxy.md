@@ -59,6 +59,10 @@ server {
 }
 ```
 
+
+- Think about maximal upload file size.
+- Measure internal file upload vs external file upload. Make sure not to use internet connection internally.
+
 ## Nextcloud in Docker Container
 
 `docker-compose.yml` file
