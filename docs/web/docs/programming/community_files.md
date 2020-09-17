@@ -1,12 +1,28 @@
 # Community Files
 
 ## License Files
-### Code Licenses
-### Documentation Licenses
-### Other Licenses
+
+Please refer to [choosealicense.com](https://choosealicense.com/) for a detailed explanation.
 
 ## README Files
+### Short Summary
+### Development Status and Badges
+### Authors and Mailing Lists
+### Requirements
+### Support
+### Clone
+### Build
 ### Install
+### Test
+### Usage
+### API
+### Examples
+### Background
+### References
+### Features
+### Implementation Details
+### Further Reading
+### Roadmap
 
 ## Contributing Files
 ### Issue System and Issue Templates

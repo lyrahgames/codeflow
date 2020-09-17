@@ -31,6 +31,11 @@ As a consequence, we need a way to test if the ignoring is working correctly.
 Git already provides a built-in tool for things like this.
 It is called `git ls-files`.
 
+## Git Hooks
+
+    git config --global core.hooksPath .githooks
+    git config --local core.hooksPath .githooks
+
 
 ## References
 
