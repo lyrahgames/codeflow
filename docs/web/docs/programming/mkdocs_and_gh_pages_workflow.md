@@ -290,14 +290,12 @@ Now, open the new file `main.html` inside the folder `overrides` and add the fol
 
 {% block content %}
   <style type="text/css">
-    .justify {
+    p {
       text-align: justify;
       text-justify: inter-word;
     }
   </style>
-  <section class="justify">
-    {{ super() }}
-  </section>
+  {{ super() }}
 {% endblock %}
 ```
 
