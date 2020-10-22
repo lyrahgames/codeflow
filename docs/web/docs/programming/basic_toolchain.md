@@ -1,22 +1,29 @@
 # Basic Toolchain
 
 The basic toolchain consists of all tools that are needed on a daily basis.
-Hence, we should strive for a deep understanding all those tools.
-Especially, we should take the time to learn and configure them in a way that they will help us to improve our workflow and efficiency.
-Furthermore, after the understanding of tools, it would even help us to consider the interaction between those different tools.
+Hence, we should strive for a deep understanding of all those tools.
+Especially, we should take the time to learn and configure them in a way that will help us to improve our workflow and efficiency when developing applications.
+Furthermore, after the comprehension of those tools, it would even help us to consider to optimize their interaction processes.
 
-## Notes on Integrated Development Environments
-
-Integrated Development Environments (IDEs) are software applications for computer programmers to support the process of writing and debugging code. They merge independent software development tools, such as source code editors, build automation tools, and debuggers, together in one bigger application. But there is no clear boundary if something should be called an IDE or a supporting tool.
-
-In general, the usage of an IDE will simplify installing the environment and will speed up code refactoring. IDEs tend to use up a huge amount of memory on the RAM. For a beginner, lots of things are made too simple so that learning is not really possible. A typical solution is a mini IDE.
-
-In the following, the basic toolchain for a C++ project will be shown. Every part will be discussed as an independent tool. This explains the interaction. If one should use a full-blown IDE or a mini IDE is left to the reader.
+In the following, the basic toolchain for a C++ project will be shown.
+Every part will be discussed as an independent tool.
+This following scheme shows an overview and gives an idea on how these tools interact with each other.
 
 [![](../assets/images/basic_toolchain.png)](../assets/images/basic_toolchain.pdf)
 
 Click on the image to get the according PDF.
 
+## Notes on Integrated Development Environments
+
+[Integrated Development Environments (IDEs)](https://en.wikipedia.org/wiki/Integrated_development_environment) are software applications for computer programmers to support the process of writing and debugging code.
+They merge independent software development tools, such as source code editors, build automation tools, and debuggers, together in one bigger application.
+But there is no clear boundary if something should be called an IDE or a supporting tool.
+
+In general, the usage of an IDE will simplify installing the environment and will speed up code refactoring.
+On the other hand, IDEs tend to use up a huge amount of memory in the operating system.
+Furthermore, in my opinion, for a beginner, lots of things are made too simple so that learning and understanding is hindered and not really possible.
+A typical solution, which both sides agree with, is a minimal IDE that does not impose the disadvantages of a full-blown IDE, yet enhancing the development process.
+Nevertheless, the decision which of them to use is left to the reader.
 
 ## Operating System
 
@@ -45,7 +52,7 @@ Therefore an ideal operating system for development would fulfill the following 
 - open source system / providing ways to use open source software
 - free to use
 
-In reality there is no operating system which fulfills all these conditions.
+In reality there is no operating system which fulfills all of these conditions.
 As a consequence we look for the best subset.
 In our experience any Linux distribution seems to be a really good candidate.
 Most Linux distributions are lightweight, easy to install, fast to boot and shutdown and free to use.
@@ -53,6 +60,7 @@ With nearly every distribution coding and installing tools can be done without p
 Upgrading a Linux distribution can be done manually.
 Choosing a specific Linux distribution is a matter of taste.
 But we recommend one of the following.
+
 - Ubuntu/Debian-based (Ubuntu, Debian, Mint)
 - Arch-based (Arch, Manjaro)
 
@@ -90,6 +98,12 @@ Our suggestion is to think about modern alternatives.
 - `ion`: really efficient
 
 But if you really want to have high availability of your shell then you should stick to `bash`, `zsh` or `dash`.
+
+The shell is a command-line interface to the standard operating system routines.
+Typically, we work with graphical user interfaces (GUIs) and therefore the shell has to be executed inside a terminal emulator.
+Like the name says, the terminal emulator emulates a terminal interface in which characters can be typed and interpreted by a running shell.
+If you have no other preferences, we recommend to choose the default terminal emulator of your operating system.
+
 
 ## Version Control System
 
