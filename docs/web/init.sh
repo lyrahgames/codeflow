@@ -5,7 +5,8 @@ doc_dir=`dirname "$0"`
 cd $doc_dir
 
 # Install all requirements to be able to build the documentation.
-pip install -r requirements.txt
+# pip install -r requirements.txt
+sudo pip install -r requirements.txt
 
 # Create a configuration folder for the gh-pages branch next to the
 # project folder and hopefully inside the developer folder.
