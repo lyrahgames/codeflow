@@ -4,12 +4,6 @@
 Let $n\in\mathbb{N}$, $\Omega\subset\mathbb{R}^n$ an open subset, and $u:\Omega\to\mathbb{R}$ a two-times continuously differentiable scalar function.
 Additionally, let $A = (a_{ij}) \in\mathbb{R}^{n\times n}$ denote an orthogonal matrix and $b\in\mathbb{R}^n$ an arbitrary shift vector.
 Define the affine transformation $\varphi:\mathbb{R}^n\to\mathbb{R}^n$ with $\varphi(x)=Ax + b$ for all $x\in\mathbb{R}^n$.
-<!-- Furthermore, define the Laplacian of $u$ as the following.
-
-\[
-    \Delta u = \sum_{i=1}^n \partial^2_iu
-\] -->
-
 In this case the Laplacian is invariant under the transformation $\varphi$.
 
 \[
