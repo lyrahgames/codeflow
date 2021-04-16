@@ -14,7 +14,7 @@ theme:
   custom_dir: overrides
   language: en
   features:
-    - tabs
+    - navigation.tabs
   palette:
     scheme: default
     # scheme: preference
