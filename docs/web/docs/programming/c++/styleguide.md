@@ -256,6 +256,107 @@ void print(generic::string const auto& str);
 // This looks good but breaks uniformity.
 ```
 
+### Constructors
+In C++, constructors of classes, as done in Rust, cannot be extended or overload from the outside.
+But it is not possible to always change a class definition for a new constructor.
+For example, `std::string` might need constructors for many different custom classes.
+It makes no sense to add this dependency to the class definition itself.
+Still, needing to add the feature for constructor extensibility (in the sense of factory functions) leads to either using namespaces or prefixes/suffixes for helper functions.
+Using static functions inside the class does not allow for extensibility.
+Using a static function inside the class that wraps all other calls from the outside is not possible due to the wrong definition order.
+```c++
+// Rust-style simulation of factory functions and constructor extensions
+
+struct aabb;
+
+namespace detail::aabb{
+    using self = ::self;
+    // Symbol for 'from' needs to be defined here.
+}
+
+struct aabb{
+    static auto from(auto&&... args) -> aabb {
+        return detail::aabb_from(std::forward<decltype(args)>(args)...);
+    }
+};
+
+// Customization
+namespace detail::aabb {
+// This overload will not be seen by '::aabb::from'.
+auto from(int i) -> self {
+    return {};
+}
+}
+
+// The only way around would be to define '::aabb::from'
+// after all constructor extensions and only declare it in the class itself.
+// This is error-prone and no one can be expected to do this.
+auto aabb::from(auto&&... args) -> aabb {
+    return detail::aabb_from(std::forward<decltype(args)>(args)...);
+}
+```
+
+So, static functions do not fit this need.
+For consistency, it makes to not use static functions for constructor extensions at all.
+Using namespace or prefixes/suffixes allows for ADL and arbitrary extensibility.
+Types do not need to be accessed from the inside.
+Namespaces still seem to not provide the best syntax as they cannot be used with keywords and it is not easy to give them the same name as the type itself.
+There is no namespace called 'new'.
+C++ STL already uses prefix-based constructor extension functions, like `make_unique`, `to_string`, and `make_shared`.
+Multiple different prefixes and suffixes can be used.
+```c++
+struct aabb {};
+
+// The most specific part of the function name is left.
+// This makes better use of editor type support.
+auto aabb_from(int) -> aabb {
+    return {};
+}
+
+// '_from' can easily be specialized.
+// And it can be applied in nearly every situation.
+auto string_from_file(const std::filesystem::path& path) -> std::string;
+// In this case, using only 'string_from(const filesystem::path&)'
+// could mean two different things.
+// (1) Transform the path into a string by calling 'path.string()'.
+// (2) Get the content of the file given by the path.
+
+// Alternative and conform to STL
+// But still harder to read.
+auto file_to_string(const filesystem::path& path) -> string;
+// Used in a function template, it makes much more sense.
+// But not easier to read.
+template <typename container>
+auto file_to(const filesystem::path& path) -> container;
+file_to<string>(path);
+file_to<vector<char>>(path);
+file_to<vector<byte>>(path);
+// Still, in the strong sense, this is no constructor extension anymore.
+// Hence, it would not be inconsistent to
+// use this form for templated transformations.
+
+// Putting the type to the left by using a suffix
+// makes assignments by construction easier to read.
+const auto box = aabb_from(1);
+
+// Furthermore, we can use a macro to provide all type constructors
+// also as constructor extensions.
+// This works also for type templates with proper CTAD support.
+#define ADD_DEFAULT_CONSTRUCTOR_EXTENSION(TYPE)                        \
+  constexpr auto TYPE##_from(auto&&... args) noexcept(                 \
+      noexcept(TYPE(std::forward<decltype(args)>(args)...)))           \
+    requires requires { TYPE(std::forward<decltype(args)>(args)...); } \
+  {                                                                    \
+    return TYPE(std::forward<decltype(args)>(args)...);                \
+  }
+
+// CTAD cannot be used for partial deduction.
+// So, for the special case of partial deduction only for the real constructors,
+// we could use the 'auto_' prefix,
+// which would then be even combinable with the '_from' suffix.
+auto auto_map(...);
+```
+
 ## References
 
 - [C++ Ref] [cppreference.com](https://en.cppreference.com/w/)
